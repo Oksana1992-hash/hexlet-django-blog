@@ -1,10 +1,12 @@
+from django.views import View
 from django.shortcuts import render
 
-def index(request):
-    return render(
-        request,
-        "articles/index.html",
-        context={
-            "app_name": "Article"
-        },
-    )
+class IndexView(View):
+    template_name = "articles/index.html"
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            "app_name": "Статьи",
+        }
+        return render(request, self.template_name, context)
+
