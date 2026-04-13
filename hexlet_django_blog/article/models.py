@@ -5,3 +5,6 @@ class Article(models.Model):
     body = models.TextField() #тело статьи
     created_at = models.DateTimeField(auto_now_add=True) #для хранения даты и времени создания записи
     updated_at = models.DateTimeField(auto_now=True) #для хранения даты и времени последнего изменения записи
+
+    def __str__(self):
+        return self.name
