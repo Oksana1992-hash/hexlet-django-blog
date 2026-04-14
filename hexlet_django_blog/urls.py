@@ -20,7 +20,7 @@ from hexlet_django_blog import views
 
 
 urlpatterns = [
-    path("", views.home_redirect, name='home'),
+    path("", views.IndexView.as_view(), name='root'),
     path("about/", views.about),
     path("articles/", include("hexlet_django_blog.article.urls")),
     path("admin/", admin.site.urls),
