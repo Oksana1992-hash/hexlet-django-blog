@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-     <h1>{{ article.name }}</h1>
+    <h1>{{ article.name }}</h1>
     <div>{{ article.body }}</div>
+    <a href="{% url 'articles:articles_update' article.id %}">Редактировать</a>
 {% endblock %}
